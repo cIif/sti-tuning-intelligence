@@ -19,9 +19,13 @@
 - **Stage 1 (base fueling / VE) — in progress, going well.** Across attempts the VE corrections it wants are *shrinking* (median ≈ 5% → ≈ 2%) — the air model is converging on target. Idle sits steady at stoich with a tiny closed-loop trim; cruise fueling reads dialed (0 cells off target).
 - **No WOT pulls yet — by design.** The method is a ladder: **idle → cruise → ~50% pull → full pull → only then add boost.** It won't green-light a pull until idle + cruise are confirmed clean.
 
+## How it started
+
+I'm **not a professional tuner** — I'm an engineering student who's spent **~a year tuning this one car**. What I *can* do is analyze data, so I built an analyzer to do exactly that — and that's how I learned to **decode and re-code the ROM tables and maps** in the first place. The analyzer grew into this whole pipeline.
+
 ## Built on a year of real data
 
-It isn't guessing from defaults. The whole thing is grounded in **~a year of actually tuning this car** — every map revision and datalog, plus a vetted reference library I built up covering the build, the parts, the fuel, and the tuning concepts behind each decision. The pipeline learns the **method** and the **safe envelope** directly from that history, so its corrections and its limits come from what this car has actually done, not from a generic table.
+It isn't guessing from defaults. The whole thing is grounded in that **year of actually tuning this car** — every map revision and datalog, plus a vetted reference library I built up covering the build, the parts, the fuel, and the tuning concepts behind each decision. The pipeline learns the **method** and the **safe envelope** directly from that history, so its corrections and its limits come from what this car has actually done, not from a generic table.
 
 ## The method it reproduces
 
